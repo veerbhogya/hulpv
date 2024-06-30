@@ -206,6 +206,7 @@ if st.button('Predict'):
         f=target_function,
         pbounds=pbounds,
         random_state=42,
+        verbose=1
     )
 
     optimizer.maximize(
