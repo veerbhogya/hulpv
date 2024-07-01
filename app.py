@@ -227,7 +227,7 @@ if st.button('Predict'):
     param4_values = [params['param4'] for params in valid_params]
     param5_values = [params['param5'] for params in valid_params]
 
-    optimal_param1_range = (round(np.mean(param1_values) - np.std(param1_values) / 2,2), np.mean(param1_values) + np.std(param1_values) / 2)
+    optimal_param1_range = (round(float(np.mean(param1_values) - np.std(param1_values) / 2), 2), float(np.mean(param1_values) + np.std(param1_values) / 2))
     optimal_param2_range = (np.mean(param2_values) - np.std(param2_values) / 2, np.mean(param2_values) + np.std(param2_values) / 2)
     optimal_param3_range = (np.mean(param3_values) - np.std(param3_values) / 2, np.mean(param3_values) + np.std(param3_values) / 2)
     optimal_param4_range = (np.mean(param4_values) - np.std(param4_values) / 2, np.mean(param4_values) + np.std(param4_values) / 2)
