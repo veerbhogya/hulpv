@@ -227,11 +227,11 @@ if st.button('Predict'):
     param4_values = [params['param4'] for params in valid_params]
     param5_values = [params['param5'] for params in valid_params]
 
-   optimal_param1_range = (round(float(np.mean(param1_values) - np.std(param1_values) / 2), 2), round(float(np.mean(param1_values) + np.std(param1_values) / 2), 2))
-   optimal_param2_range = (round(float(np.mean(param2_values) - np.std(param2_values) / 2), 2), round(float(np.mean(param2_values) + np.std(param2_values) / 2), 2))
-   optimal_param3_range = (round(float(np.mean(param3_values) - np.std(param3_values) / 2), 2), round(float(np.mean(param3_values) + np.std(param3_values) / 2), 2))
-   optimal_param4_range = (round(float(np.mean(param4_values) - np.std(param4_values) / 2), 2), round(float(np.mean(param4_values) + np.std(param4_values) / 2), 2))
-   optimal_param5_range = (round(float(np.mean(param5_values) - np.std(param5_values) / 2), 2), round(float(np.mean(param5_values) + np.std(param5_values) / 2), 2))
+    optimal_param1_range = (round(float(np.mean(param1_values) - np.std(param1_values) / 2), 2), round(float(np.mean(param1_values) + np.std(param1_values) / 2), 2))
+    optimal_param2_range = (round(float(np.mean(param2_values) - np.std(param2_values) / 2), 2), round(float(np.mean(param2_values) + np.std(param2_values) / 2), 2))
+    optimal_param3_range = (round(float(np.mean(param3_values) - np.std(param3_values) / 2), 2), round(float(np.mean(param3_values) + np.std(param3_values) / 2), 2))
+    optimal_param4_range = (round(float(np.mean(param4_values) - np.std(param4_values) / 2), 2), round(float(np.mean(param4_values) + np.std(param4_values) / 2), 2))
+    optimal_param5_range = (round(float(np.mean(param5_values) - np.std(param5_values) / 2), 2), round(float(np.mean(param5_values) + np.std(param5_values) / 2), 2))
 
     st.markdown("<div class='main-title'>Optimal Ranges</div>", unsafe_allow_html=True)
     st.write(f"Optimal Range of turbo final plodder out temp: { optimal_param1_range}")
