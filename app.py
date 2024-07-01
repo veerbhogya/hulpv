@@ -147,7 +147,9 @@ BATCH_TIME = input_data.loc[input_data['Parameter'] == 'BATCH TIME.', 'Value'].v
 if st.button('Predict'):
     input_array = np.array(input_params).reshape(1, -1)
     prediction = model.predict(input_array)[0]
-    st.markdown(f"<div class='prediction'>Predicted PV: {round(prediction,2)}</div>", unsafe_allow_html=True)
+    # st.markdown(f"<div class='prediction'>Predicted PV: {round(prediction,2)}</div>", unsafe_allow_html=True)
+    rounded_prediction = round(prediction, 2)
+    st.markdown(f"<div class='prediction'>Predicted PV: {rounded_prediction:.2f}</div>", unsafe_allow_html=True)
     def target_function(param1, param2, param3, param4, param5):
         # Create a copy of the dataset
         X_opt = X_train.copy()
