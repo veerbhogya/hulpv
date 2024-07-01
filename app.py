@@ -147,7 +147,7 @@ BATCH_TIME = input_data.loc[input_data['Parameter'] == 'BATCH TIME.', 'Value'].v
 if st.button('Predict'):
     input_array = np.array(input_params).reshape(1, -1)
     prediction = model.predict(input_array)[0]
-    st.markdown(f"<div class='prediction'>Predicted PV: {prediction.round(2)}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div class='prediction'>Predicted PV: {round(prediction,2)}</div>", unsafe_allow_html=True)
     def target_function(param1, param2, param3, param4, param5):
         # Create a copy of the dataset
         X_opt = X_train.copy()
@@ -227,11 +227,11 @@ if st.button('Predict'):
     param4_values = [params['param4'] for params in valid_params]
     param5_values = [params['param5'] for params in valid_params]
 
-    optimal_param1_range = (round(float(np.mean(param1_values) - np.std(param1_values) / 2), 2), float(np.mean(param1_values) + np.std(param1_values) / 2))
-    optimal_param2_range = (np.mean(param2_values) - np.std(param2_values) / 2, np.mean(param2_values) + np.std(param2_values) / 2)
-    optimal_param3_range = (np.mean(param3_values) - np.std(param3_values) / 2, np.mean(param3_values) + np.std(param3_values) / 2)
-    optimal_param4_range = (np.mean(param4_values) - np.std(param4_values) / 2, np.mean(param4_values) + np.std(param4_values) / 2)
-    optimal_param5_range = (np.mean(param5_values) - np.std(param5_values) / 2, np.mean(param5_values) + np.std(param5_values) / 2)
+   optimal_param1_range = (round(float(np.mean(param1_values) - np.std(param1_values) / 2), 2), round(float(np.mean(param1_values) + np.std(param1_values) / 2), 2))
+   optimal_param2_range = (round(float(np.mean(param2_values) - np.std(param2_values) / 2), 2), round(float(np.mean(param2_values) + np.std(param2_values) / 2), 2))
+   optimal_param3_range = (round(float(np.mean(param3_values) - np.std(param3_values) / 2), 2), round(float(np.mean(param3_values) + np.std(param3_values) / 2), 2))
+   optimal_param4_range = (round(float(np.mean(param4_values) - np.std(param4_values) / 2), 2), round(float(np.mean(param4_values) + np.std(param4_values) / 2), 2))
+   optimal_param5_range = (round(float(np.mean(param5_values) - np.std(param5_values) / 2), 2), round(float(np.mean(param5_values) + np.std(param5_values) / 2), 2))
 
     st.markdown("<div class='main-title'>Optimal Ranges</div>", unsafe_allow_html=True)
     st.write(f"Optimal Range of turbo final plodder out temp: { optimal_param1_range}")
