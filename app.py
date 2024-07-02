@@ -191,10 +191,10 @@ if st.button('Predict'):
 
     # Define the parameter bounds (replace with actual min and max values for each parameter)
     pbounds = {
-        'param1': (10, 20),
+        'param1': (10, 30),
         'param2': (10, 25),
-        'param3': (10, 20),
-        'param4': (10, 20),
+        'param3': (10, 30),
+        'param4': (10, 30),
         'param5': (11, 15),
         # 'param6': (8, 20),
         # 'param7': (20, 35),
