@@ -179,7 +179,7 @@ if st.button('Predict'):
         X_opt['TURBO MIXER OUT TEMP'] = param2
         X_opt['TURBO NOODLER OUT TEMP'] = param3
         X_opt['TURBO PRE OUT TEMP'] = param4
-         X_opt['VCM CHAMBER'] = param5
+        X_opt['VCM CHAMBER'] = param5
 
         # Predict the output
         y_pred = model.predict(X_opt)
