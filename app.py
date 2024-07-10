@@ -165,26 +165,27 @@ if st.button('Predict'):
         X_opt['recycle per'] = recycle_per
         X_opt['MIXER OUT TEMP'] = MIXER_OUT_TEMP
         X_opt['RM STARCH'] = RM_STARCH
-        X_opt['VCM CHAMBER'] = VCM_CHAMBER
+       
         X_opt['Moisture metre.'] = Moisture_metre
         X_opt['IV.'] = IV
         X_opt['salt values.'] = salt_values
         X_opt['FA'] = FA
         X_opt['PSM NDLR TEMP'] = PSM_NDLR_TEMP
         X_opt['turbo_final_in_temp'] = turbo_final_in_temp
-
+        X_opt['BATCH TIME.'] = BATCH_TIME
+        
         # Set the 3 parameters to be optimized
         X_opt['TURBO FINAL OUT TEMP'] = param1
         X_opt['TURBO MIXER OUT TEMP'] = param2
         X_opt['TURBO NOODLER OUT TEMP'] = param3
         X_opt['TURBO PRE OUT TEMP'] = param4
-        X_opt['BATCH TIME.'] = param5
+         X_opt['VCM CHAMBER'] = param
 
         # Predict the output
         y_pred = model.predict(X_opt)
         
-        # Calculate how close the prediction is to the desired range [3.8, 4.0]
-        if np.all((3.6 <= y_pred) & (y_pred <= 3.8)):
+        # Calculate how close the prediction is to the desired range [3.6, 3.8]
+        if np.all((3.5 <= y_pred) & (y_pred <= 3.9)):
             return 0  # Perfect fit
         else:
             return -np.mean(np.abs(y_pred - 3.7))   # Penalize deviations from the target range
@@ -195,7 +196,7 @@ if st.button('Predict'):
         'param2': (10, 25),
         'param3': (10, 30),
         'param4': (10, 30),
-        'param5': (11, 15),
+        'param5': (-600, -500),
         # 'param6': (8, 20),
         # 'param7': (20, 35),
         # 'param8': (-600, -550),
@@ -240,7 +241,7 @@ if st.button('Predict'):
     st.write(f"Optimal Range of turbo mixer out temp: { optimal_param2_range}")
     st.write(f"Optimal Range of turbo noodler out temp: { optimal_param3_range}")
     st.write(f"Optimal Range of turbo pre plodder out temp: { optimal_param4_range}")
-    st.write(f"Optimal Range of batch time: { optimal_param5_range}")
+    st.write(f"Optimal Range of Vacuum: { optimal_param5_range}")
 
 
 else:
